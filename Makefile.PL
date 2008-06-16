@@ -4,6 +4,8 @@ use strict;
 
 use ExtUtils::MakeMaker;
 
+require 5.008;
+
 WriteMakefile(
 	NAME         => '',
 	VERSION_FROM => '',
