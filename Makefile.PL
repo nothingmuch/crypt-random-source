@@ -14,6 +14,8 @@ WriteMakefile(
 	PL_FILES     => { },
 	PREREQ_PM    => {
 		'Test::use::ok' => 0,
+		'Test::Exception' => 0,
+		'Mouse' => '0.04', # lazy_build
 	},
 );
 
