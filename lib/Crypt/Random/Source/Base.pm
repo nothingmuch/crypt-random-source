@@ -3,6 +3,8 @@
 package Crypt::Random::Source::Base;
 use Squirrel;
 
+sub available { 0 }
+
 sub get { die "abstract" }
 
 # cannibalized from IO::Scalar
