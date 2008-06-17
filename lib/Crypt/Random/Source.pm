@@ -10,7 +10,7 @@ use Sub::Exporter -setup => {
 	groups => { default => [qw(get get_weak get_strong)] },
 };
 
-our $VERSION = "0.01_01";
+our $VERSION = "0.01";
 
 use Crypt::Random::Source::Factory;
 
