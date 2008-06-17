@@ -23,6 +23,22 @@ sub read {
 	return $n;
 }
 
+sub get_data {
+	my ( $self, %params ) = @_;
+
+	if ( my $n = $params{Length} ) {
+		return $self->get($n);
+	} else {
+		my $size = $params{Size};
+
+		if (ref $size && ref $size eq "Math::Pari") {
+			$size = Math::Pari::pari2num($size);
+		}
+
+		return $self->get( int($size / 8) + 1 );
+	}
+}
+
 __PACKAGE__
 
 __END__
@@ -82,6 +98,10 @@ This is use by L<Crypt::Random::Source::Factory>.
 
 This is a class method, with some futz value for a ranking, to help known good
 sources be tried before known bad (slower, less available) sources.
+
+=item get_data %Params
+
+Provided for compatibility with L<Crypt::Random>
 
 =back
 
