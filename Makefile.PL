@@ -16,6 +16,9 @@ WriteMakefile(
 		'Test::use::ok' => 0,
 		'Test::Exception' => 0,
 		'Mouse' => '0.04', # lazy_build
+		'namespace::clean' => '0.08',
+		'Module::Find' => 0,
+		'Sub::Exporter' => 0,
 	},
 );
 
