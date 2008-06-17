@@ -5,6 +5,8 @@ use Squirrel;
 
 sub available { 0 }
 
+sub rank { 0 }
+
 sub seed { }
 
 sub get { die "abstract" }
@@ -75,6 +77,11 @@ This is a class method, such that when it returns true calling C<new> without
 arguments on the class should provide a working source of random data.
 
 This is use by L<Crypt::Random::Source::Factory>.
+
+=item rank
+
+This is a class method, with some futz value for a ranking, to help known good
+sources be tried before known bad (slower, less available) sources.
 
 =back
 
