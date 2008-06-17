@@ -8,6 +8,8 @@ use Test::More 'no_plan';
 use ok 'Crypt::Random::Source::Weak::rand';
 
 {
+	ok( Crypt::Random::Source::Weak::rand->available, "rand is always available" );
+
 	my $p = Crypt::Random::Source::Weak::rand->new;
 
 	my $buf = $p->get(1000);
