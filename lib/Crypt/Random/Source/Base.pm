@@ -62,6 +62,20 @@ work-alike.
 Note that subclasses override this to operate on a real handle directly if
 available.
 
+=item seed @stuff
+
+On supporting sources this method will add C<@stuff>, whatever it may be, to
+the random seed.
+
+Some sources may not support this, so be careful.
+
+=item available
+
+This is a class method, such that when it returns true calling C<new> without
+arguments on the class should provide a working source of random data.
+
+This is use by L<Crypt::Random::Source::Factory>.
+
 =back
 
 =cut
