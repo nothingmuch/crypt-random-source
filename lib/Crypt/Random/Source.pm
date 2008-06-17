@@ -6,7 +6,10 @@ use strict;
 use warnings;
 
 use Sub::Exporter -setup => {
-	exports  => [qw(get get_weak get_strong)],
+	exports  => [qw(
+		get get_weak get_strong
+		factory
+	)],
 	groups => { default => [qw(get get_weak get_strong)] },
 };
 
@@ -16,10 +19,13 @@ use Crypt::Random::Source::Factory;
 
 our ( $factory, $weak, $strong, $any );
 
-sub _factory   ()    { $factory ||= Crypt::Random::Source::Factory->new }
-sub _weak      ()    { $weak    ||= _factory->get_weak }
-sub _strong    ()    { $strong  ||= _factory->get_strong }
-sub _any       ()    { $any     ||= _factory->get }
+# silence some stupid destructor warnings
+END { undef $weak; undef $strong; undef $any; undef $factory }
+
+sub factory    ()    { $factory ||= Crypt::Random::Source::Factory->new }
+sub _weak      ()    { $weak    ||= factory->get_weak }
+sub _strong    ()    { $strong  ||= factory->get_strong }
+sub _any       ()    { $any     ||= factory->get }
 
 sub get        ($;@) {    _any->get(@_) }
 sub get_weak   ($;@) {   _weak->get(@_) }
