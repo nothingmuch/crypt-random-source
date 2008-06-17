@@ -10,6 +10,8 @@ extends qw(
 	Crypt::Random::Source::Base
 );
 
+sub rank { -100 } # slow fallback
+
 sub available { 1 }
 
 sub seed {
