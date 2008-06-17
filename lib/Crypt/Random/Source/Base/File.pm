@@ -15,13 +15,13 @@ has path => (
 );
 
 sub open_handle {
-	my $self = shift;
+	my ( $self, $mode ) = @_;
 
 	my $file = $self->path;
 
 	my $fh = IO::File->new;
 
-	$fh->open($file, "r")
+	$fh->open($file, $mode || "r")
 		or croak "open($file): $!";
 
 	return $fh;
