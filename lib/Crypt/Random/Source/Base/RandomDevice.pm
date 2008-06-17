@@ -5,6 +5,8 @@ use Squirrel;
 
 extends qw(Crypt::Random::Source::Base::File);
 
+sub rank { 100 } # good quality, pretty fast
+
 has path => (
 	builder => "default_path",
 );
