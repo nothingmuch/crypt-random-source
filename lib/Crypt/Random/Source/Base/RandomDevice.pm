@@ -13,6 +13,16 @@ sub available {
 	-r shift->default_path;
 }
 
+sub seed {
+	my ( $self, @args ) = @_;
+
+	my $fh = $self->open_handle("w+");
+
+	print $fh @args;
+
+	close $fh;
+}
+
 sub default_path {
 	die "abstract";
 }

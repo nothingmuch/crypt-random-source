@@ -39,6 +39,8 @@ use ok 'Crypt::Random::Source::Weak::devurandom';
 	} else {
 		is( $!, EWOULDBLOCK, "would have blocked" );
 	}
+
+	can_ok($p, "seed");
 }
 
 {
@@ -61,5 +63,7 @@ use ok 'Crypt::Random::Source::Weak::devurandom';
 
 	# this test should fail around every few universes or so ;-)
 	cmp_ok( $buf, 'ne', $p->get(length($buf)), "random data differs" );
+
+	can_ok($p, "seed");
 }
 
