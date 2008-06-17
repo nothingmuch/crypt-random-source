@@ -8,10 +8,8 @@ extends qw(
 	Crypt::Random::Source::Base::RandomDevice
 );
 
-has path => (
-	is => "rw",
-	default => "/dev/random",
-);
+
+sub default_path { "/dev/random" }
 
 __PACKAGE__
 

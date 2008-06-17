@@ -5,6 +5,18 @@ use Squirrel;
 
 extends qw(Crypt::Random::Source::Base::File);
 
+has path => (
+	builder => "default_path",
+);
+
+sub available {
+	-r shift->default_path;
+}
+
+sub default_path {
+	die "abstract";
+}
+
 __PACKAGE__
 
 __END__

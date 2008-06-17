@@ -16,6 +16,8 @@ use ok 'Crypt::Random::Source::Strong::devrandom';
 use ok 'Crypt::Random::Source::Weak::devurandom';
 
 {
+	ok( Crypt::Random::Source::Strong::devrandom->available, "/dev/random is available" );
+
 	my $p = Crypt::Random::Source::Strong::devrandom->new;
 
 	isa_ok( $p, "Crypt::Random::Source::Strong" );
@@ -40,6 +42,8 @@ use ok 'Crypt::Random::Source::Weak::devurandom';
 }
 
 {
+	ok( Crypt::Random::Source::Weak::devurandom->available, "/dev/random is available" );
+
 	my $p = Crypt::Random::Source::Weak::devurandom->new;
 
 	isa_ok( $p, "Crypt::Random::Source::Weak" );
