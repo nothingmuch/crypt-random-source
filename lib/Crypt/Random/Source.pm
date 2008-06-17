@@ -42,7 +42,7 @@ __END__
 
 =head1 NAME
 
-Crypt::Random::Source - Get random weak or strong random data.
+Crypt::Random::Source - Get weak or strong random data from pluggable sources.
 
 =head1 SYNOPSIS
 
