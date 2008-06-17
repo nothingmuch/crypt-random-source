@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Strong;
-
-use strict;
-use warnings;
+use Squirrel;
 
 sub is_strong { 1 }
 
