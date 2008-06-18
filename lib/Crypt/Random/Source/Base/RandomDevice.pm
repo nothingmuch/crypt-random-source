@@ -45,7 +45,7 @@ Crypt::Random::Source::Base::RandomDevice - Base class for random devices
 
 	extends qw(Crypt::Random::Source::Base::RandomDevice);
 
-	has '+path' => ( default => "/dev/myrandom" );
+	sub default_path { "/dev/myrandom" }
 
 =head1 DESCRIPTION
 
