@@ -26,8 +26,11 @@ has handle => (
 	predicate  => "has_handle",
 	clearer    => "clear_handle",
 	lazy_build => 1,
-	handles    => [qw(opened blocking read)],
 );
+
+sub blocking { shift->handle->blocking(@_) }
+sub read { shift->handle->read(@_) }
+sub opened { shift->handle->opened(@_) }
 
 sub DEMOLISH {
 	my $self = shift;
