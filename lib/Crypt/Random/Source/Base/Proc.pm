@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::Proc;
-use Squirrel;
+use Moose;
 
 extends qw(Crypt::Random::Source::Base::Handle);
 
@@ -38,7 +38,7 @@ C<openssl>)
 
 =head1 SYNOPSIS
 
-	use Squirrel;
+	use Moose;
 
 	extends qw(Crypt::Random::Source::Base::Proc);
 

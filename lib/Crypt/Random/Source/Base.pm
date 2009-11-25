@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base;
-use Squirrel;
+use Moose;
 
 sub available { 0 }
 
@@ -52,7 +52,7 @@ L<Crypt::Random::Source> classes.
 
 =head1 SYNOPSIS
 
-	use Squirrel;
+	use Moose;
 	extends qw(Crypt::Random::Source::Base);
 
 =head1 DESCRIPTION

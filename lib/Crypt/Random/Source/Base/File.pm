@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::File;
-use Squirrel;
+use Moose;
 
 use Carp qw(croak);
 
@@ -39,7 +39,7 @@ Crypt::Random::Source::Base::File - File (or device) random data sources.
 
 =head1 SYNOPSIS
 
-	use Squirrel;
+	use Moose;
 	extends qw(Crypt::Random::Source::Base::File);
 
 	has '+path' => (

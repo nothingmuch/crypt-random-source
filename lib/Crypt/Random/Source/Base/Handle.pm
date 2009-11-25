@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::Handle;
-use Squirrel;
+use Moose;
 
 use Errno qw(EWOULDBLOCK);
 
@@ -100,7 +100,7 @@ Crypt::Random::Source::Base::Handle - L<IO::Handle> based random data sources
 
 =head1 SYNOPSIS
 
-	use Squirrel;
+	use Moose;
 	extends qw(Crypt::Random::Source::Base::Handle);
 
 	sub open_handle {

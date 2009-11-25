@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::RandomDevice;
-use Squirrel;
+use Moose;
 
 extends qw(Crypt::Random::Source::Base::File);
 
@@ -41,7 +41,7 @@ Crypt::Random::Source::Base::RandomDevice - Base class for random devices
 
 =head1 SYNOPSIS
 
-	use Squirrel;
+	use Moose;
 
 	extends qw(Crypt::Random::Source::Base::RandomDevice);
 

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Weak;
-use Squirrel;
+use Moose;
 
 sub is_strong { 0 }
 
@@ -18,7 +18,7 @@ sources
 
 =head1 SYNOPSIS
 
-	use Squirrel; # or Moose
+	use Moose;
 
 	extends qw(Crypt::Random::Source::Weak);
 

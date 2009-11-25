@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Weak::rand;
-use Squirrel;
+use Moose;
 
 use bytes;
 
