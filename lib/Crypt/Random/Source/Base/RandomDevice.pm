@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::RandomDevice;
-use Moose;
+use Any::Moose;
 
 extends qw(Crypt::Random::Source::Base::File);
 

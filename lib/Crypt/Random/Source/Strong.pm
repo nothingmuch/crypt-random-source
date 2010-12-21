@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Strong;
-use Moose;
+use Any::Moose;
 
 sub is_strong { 1 }
 

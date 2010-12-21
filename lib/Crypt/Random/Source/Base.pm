@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base;
-use Moose;
+use Any::Moose;
 
 sub available { 0 }
 

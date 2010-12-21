@@ -1,13 +1,11 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Factory;
-use Moose;
+use Any::Moose;
 
 use Carp qw(croak);
 
 use Module::Find;
-
-BEGIN { *load_class = defined &Mouse::load_class ? \&Mouse::load_class : \&Class::MOP::load_class }
 
 use namespace::clean -except => [qw(meta)];
 
@@ -130,7 +128,7 @@ sub _build_strong_sources {
 sub best_available {
 	my ( $self, @sources ) = @_;
 
-	my @available = grep { local $@; eval { load_class($_); $_->available }; } @sources;
+	my @available = grep { local $@; eval { Any::Moose::load_class($_); $_->available }; } @sources;
 
 	my @sorted = sort { $b->rank <=> $a->rank } @available;
 
@@ -142,7 +140,7 @@ sub first_available {
 
 	foreach my $class ( @sources ) {
 		local $@;
-		return $class if eval { load_class($class); $class->available };
+		return $class if eval { Any::Moose::load_class($class); $class->available };
 	}
 }
 

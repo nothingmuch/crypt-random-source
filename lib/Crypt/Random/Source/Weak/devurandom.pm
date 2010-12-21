@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Weak::devurandom;
-use Moose;
+use Any::Moose;
 
 extends qw(
 	Crypt::Random::Source::Weak

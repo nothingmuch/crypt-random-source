@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::Handle;
-use Moose;
+use Any::Moose;
 
 use Errno qw(EWOULDBLOCK);
 

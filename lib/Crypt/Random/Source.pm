@@ -3,6 +3,7 @@
 package Crypt::Random::Source;
 
 use strict;
+use 5.008;
 use warnings;
 
 use Sub::Exporter -setup => {
@@ -13,7 +14,7 @@ use Sub::Exporter -setup => {
 	groups => { default => [qw(get get_weak get_strong)] },
 };
 
-our $VERSION = "0.05";
+our $VERSION = "0.06";
 
 use Crypt::Random::Source::Factory;
 

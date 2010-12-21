@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Base::File;
-use Moose;
+use Any::Moose;
 
 use Carp qw(croak);
 

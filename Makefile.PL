@@ -1,24 +1,19 @@
-#!/usr/bin/perl -w
-
 use strict;
+use inc::Module::Install;
 
-use ExtUtils::MakeMaker;
+all_from 'lib/Crypt/Random/Source.pm';
+repository 'https://github.com/nothingmuch/crypt-random-source';
 
-require 5.008;
+test_requires 'Test::use::ok' => 0;
+test_requires 'Test::Exception' => 0;
 
-WriteMakefile(
-	NAME         => 'Crypt::Random::Source',
-	VERSION_FROM => 'lib/Crypt/Random/Source.pm',
-	INSTALLDIRS  => 'site',
-	SIGN         => 1,
-	PL_FILES     => { },
-	PREREQ_PM    => {
-		'Test::use::ok' => 0,
-		'Test::Exception' => 0,
-		'Moose' => 0.92,
-		'namespace::clean' => '0.08',
-		'Module::Find' => 0,
-		'Sub::Exporter' => 0,
-	},
+requires 'Any::Moose' => 0.11;
+requires 'namespace::clean' => '0.08';
+requires 'Module::Find' => 0;
+requires 'Sub::Exporter' => 0;
+
+makemaker_args(
+    dist => { PREOP => 'pod2text lib/Crypt/Random/Source.pm > README' },
 );
 
+WriteAll;

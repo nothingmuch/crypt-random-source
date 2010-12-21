@@ -1,3 +1,6 @@
+0.06
+		- dep on Any::Moose to allow either Moose or Mouse.
+		- Switch to using Module::Install
 0.05
 		- dep on Moose instead of Mouse
 
