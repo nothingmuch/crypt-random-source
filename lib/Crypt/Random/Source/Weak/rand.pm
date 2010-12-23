@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Weak::rand;
+# ABSTRACT: Use C<rand> to create random bytes
+
 use Moose;
 
 use bytes;
@@ -24,15 +24,7 @@ sub get {
 	pack "C*", map { int rand 256 } 1 .. $n;
 }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Weak::rand - Use C<rand> to create random bytes.
+1;
 
 =head1 SYNOPSIS
 
@@ -47,11 +39,7 @@ Crypt::Random::Source::Weak::rand - Use C<rand> to create random bytes.
 This is a weak source of random data, that uses Perl's builtin C<rand>
 function.
 
-=head1 METHODS
-
-=over 4
-
-=item seed @blah
+=method seed @blah
 
 Sets the random seed to a checksum of the stringified values of C<@blah>.
 
@@ -59,11 +47,9 @@ There is no need to call this method unless you want the random sequence to be
 identical to a previously run, in which case you should seed with the same
 value.
 
-=item get $n
+=method get $n
 
 Produces C<$n> random bytes.
-
-=back
 
 =cut
 

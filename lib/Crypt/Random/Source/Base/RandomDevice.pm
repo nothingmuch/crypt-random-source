@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Base::RandomDevice;
+# ABSTRACT: Base class for random devices
+
 use Any::Moose;
 
 extends qw(Crypt::Random::Source::Base::File);
@@ -29,15 +29,7 @@ sub default_path {
 	die "abstract";
 }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Base::RandomDevice - Base class for random devices
+1;
 
 =head1 SYNOPSIS
 
@@ -55,4 +47,3 @@ See L<Crypt::Random::Source::Strong::devrandom> and
 L<Crypt::Random::Source::Weak::devurandom> for actual implementations.
 
 =cut
-

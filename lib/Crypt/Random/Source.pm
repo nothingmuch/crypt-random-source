@@ -1,6 +1,5 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source;
+# ABSTRACT: Get weak or strong random data from pluggable sources
 
 use strict;
 use 5.008;
@@ -13,8 +12,6 @@ use Sub::Exporter -setup => {
 	)],
 	groups => { default => [qw(get get_weak get_strong)] },
 };
-
-our $VERSION = "0.06";
 
 use Crypt::Random::Source::Factory;
 
@@ -35,15 +32,7 @@ sub get_strong ($;@) { _strong->get(@_) }
 # silence some stupid destructor warnings
 END { undef $weak; undef $strong; undef $any; undef $factory }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source - Get weak or strong random data from pluggable sources.
+1;
 
 =head1 SYNOPSIS
 
@@ -78,19 +67,5 @@ L<Crypt::Random::Source::Factory>, calling get
 =head1 SEE ALSO
 
 L<Crypt::Random>, L<Crypt::Util>
-
-=head1 VERSION CONTROL
-
-L<http://github.com/nothingmuch/crypt-random-source>
-
-=head1 AUTHOR
-
-Yuval Kogman E<lt>nothingmuch@woobling.orgE<gt>
-
-=head1 COPYRIGHT
-
-	Copyright (c) 2008 Yuval Kogman. All rights reserved
-	This program is free software; you can redistribute
-	it and/or modify it under the same terms as Perl itself.
 
 =cut

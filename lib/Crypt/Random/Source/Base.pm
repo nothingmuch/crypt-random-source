@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Base;
+# ABSTRACT: Abstract base class for L<Crypt::Random::Source> classes
+
 use Any::Moose;
 
 sub available { 0 }
@@ -39,16 +39,7 @@ sub get_data {
 	}
 }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Base - Abstract base class for
-L<Crypt::Random::Source> classes.
+1;
 
 =head1 SYNOPSIS
 
@@ -61,18 +52,14 @@ This is an abstract base class.
 
 In the future it will be a role.
 
-=head1 METHODS
-
-=over 4
-
-=item get $n, %args
+=method get $n, %args
 
 Gets C<$n> random bytes and returns them as a string.
 
 This method may produce fatal errors if the source was unable to provide enough
 data.
 
-=item read $buf, $n, [ $off ]
+=method read $buf, $n, [ $off ]
 
 This method is cannibalized from L<IO::Scalar>. It provides an L<IO::Handle>
 work-alike.
@@ -80,31 +67,27 @@ work-alike.
 Note that subclasses override this to operate on a real handle directly if
 available.
 
-=item seed @stuff
+=method seed @stuff
 
 On supporting sources this method will add C<@stuff>, whatever it may be, to
 the random seed.
 
 Some sources may not support this, so be careful.
 
-=item available
+=method available
 
 This is a class method, such that when it returns true calling C<new> without
 arguments on the class should provide a working source of random data.
 
 This is use by L<Crypt::Random::Source::Factory>.
 
-=item rank
+=method rank
 
 This is a class method, with some futz value for a ranking, to help known good
 sources be tried before known bad (slower, less available) sources.
 
-=item get_data %Params
+=method get_data %Params
 
 Provided for compatibility with L<Crypt::Random>
 
-=back
-
 =cut
-
-

@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Base::Handle;
+# ABSTRACT: L<IO::Handle> based random data sources
+
 use Any::Moose;
 
 use Errno qw(EWOULDBLOCK);
@@ -91,15 +91,7 @@ sub close {
 	}
 }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Base::Handle - L<IO::Handle> based random data sources
+1;
 
 =head1 SYNOPSIS
 
@@ -127,25 +119,21 @@ This is a concrete base class for all L<IO::Handle> based random data sources.
 
 It implements error handling
 
-=head1 ATTRIBUTES
-
-=over 4
-
-=item handle
+=attr handle
 
 An L<IO::Handle> or file handle to read from.
 
-=item blocking
+=attr blocking
 
 This is actually handled by C<handle>, and is documented in L<IO::Handle>.
 
-=item allow_under_read
+=attr allow_under_read
 
 Whether or not under reading is considered an error.
 
 Defaults to false.
 
-=item reread_attempts
+=attr reread_attempts
 
 The number of attempts to make at rereading if the handle did not provide
 enough bytes on the first attempt.
@@ -154,45 +142,37 @@ Defaults to 1.
 
 Only used if C<allow_under_read> is enabled.
 
-=back
-
-=head1 METHODS
-
-=over 4
-
-=item get
+=method get
 
 See L<Crypt::Random::Source::Base/get>.
 
 When C<blocking> or C<allow_under_read> are set to a true value this method may
 return fewer bytes than requested.
 
-=item read
+=method read
 
 This delegates directly to C<handle>.
 
 It B<DOES NOT> provide the same validation as C<get> would have, so no checking
 for underreads is done.
 
-=item close
+=method close
 
 Close the handle and clear it.
 
-=item _read
+=method _read
 
 C<< $self->handle->read >> but with additional error checking and different
 calling conventions.
 
-=item _read_too_short
+=method _read_too_short
 
 Called by C<_read> when not enough data was read from the handle. Normally it
 will either die with an error or attempt to reread. When C<allow_under_read> is
 true it will just return the partial buffer.
 
-=item open_handle
+=method open_handle
 
 Abstract method, should return an L<IO::Handle> to use.
 
 =cut
-
-

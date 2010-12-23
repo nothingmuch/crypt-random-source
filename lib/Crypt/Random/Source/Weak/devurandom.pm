@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Weak::devurandom;
+# ABSTRACT: A weak random data source using F</dev/urandom>
+
 use Any::Moose;
 
 extends qw(
@@ -10,22 +10,10 @@ extends qw(
 
 sub default_path { "/dev/urandom" }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Weak::devurandom - 
+1;
 
 =head1 SYNOPSIS
 
 	use Crypt::Random::Source::Weak::devurandom;
 
-=head1 DESCRIPTION
-
 =cut
-
-

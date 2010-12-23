@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Strong::devrandom;
+# ABSTRACT: A strong random data source using F</dev/random>
+
 use Any::Moose;
 
 extends qw(
@@ -11,22 +11,10 @@ extends qw(
 
 sub default_path { "/dev/random" }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Strong::devrandom - 
+1;
 
 =head1 SYNOPSIS
 
 	use Crypt::Random::Source::Strong::devrandom;
 
-=head1 DESCRIPTION
-
 =cut
-
-

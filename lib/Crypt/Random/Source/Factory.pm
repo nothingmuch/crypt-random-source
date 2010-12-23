@@ -1,6 +1,6 @@
-#!/usr/bin/perl
-
 package Crypt::Random::Source::Factory;
+# ABSTRACT: Load and instantiate sources of random data
+
 use Any::Moose;
 
 use Carp qw(croak);
@@ -149,15 +149,7 @@ sub locate_sources {
 	[ findsubmod "Crypt::Random::Source::$category" ];
 }
 
-__PACKAGE__
-
-__END__
-
-=pod
-
-=head1 NAME
-
-Crypt::Random::Source::Factory - Load and instantiate sources of random data.
+1;
 
 =head1 SYNOPSIS
 
@@ -180,24 +172,16 @@ If C<$ENV{CRYPT_RANDOM_NOT_PLUGGABLE}> is set then only a preset list of
 sources will be tried. Otherwise L<Module::Find> will be used to locate any
 installed sources, and use the first available one.
 
-=head1 METHODS
-
-=over 4
-
-=item get %args
+=method get %args
 
 Instantiate any random source, passing %args to the constructor.
 
 The C<type> argument can be C<weak>, C<strong> or C<any>.
 
-=item get_weak %args
+=method get_weak %args
 
-=item get_strong %args
+=method get_strong %args
 
 Instantiate a new weak or strong random source.
 
-=back
-
 =cut
-
-
