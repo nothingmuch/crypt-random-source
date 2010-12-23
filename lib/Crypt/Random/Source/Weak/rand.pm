@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Weak::rand;
 # ABSTRACT: Use C<rand> to create random bytes
 
-use Moose;
+use Any::Moose;
 
 use bytes;
 
