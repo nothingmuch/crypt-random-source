@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# ex: set sw=4 et:
+
 use strict;
 use warnings;
 

@@ -91,3 +91,5 @@ sources be tried before known bad (slower, less available) sources.
 Provided for compatibility with L<Crypt::Random>
 
 =cut
+
+# ex: set sw=4 et:

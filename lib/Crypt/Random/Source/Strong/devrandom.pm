@@ -18,3 +18,5 @@ sub default_path { "/dev/random" }
     use Crypt::Random::Source::Strong::devrandom;
 
 =cut
+
+# ex: set sw=4 et:

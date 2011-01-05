@@ -176,3 +176,5 @@ true it will just return the partial buffer.
 Abstract method, should return an L<IO::Handle> to use.
 
 =cut
+
+# ex: set sw=4 et:

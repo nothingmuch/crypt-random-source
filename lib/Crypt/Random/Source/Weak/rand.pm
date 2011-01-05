@@ -53,4 +53,4 @@ Produces C<$n> random bytes.
 
 =cut
 
-
+# ex: set sw=4 et:

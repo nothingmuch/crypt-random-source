@@ -15,3 +15,5 @@ use ok 'Crypt::Random::Source::Base::Proc';
 
     throws_ok { $p->get(50) } qr/enough bytes/, "not having enough data is fatal";
 }
+
+# ex: set sw=4 et:

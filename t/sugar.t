@@ -16,3 +16,4 @@ isa_ok( $Crypt::Random::Source::weak, "Crypt::Random::Source::Weak" );
 
 ok( !$Crypt::Random::Source::strong, "no strong source yet" );
 
+# ex: set sw=4 et:

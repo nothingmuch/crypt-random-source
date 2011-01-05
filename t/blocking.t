@@ -40,3 +40,5 @@ use ok 'Crypt::Random::Source::Base::Handle';
         exit;
     }
 }
+
+# ex: set sw=4 et:

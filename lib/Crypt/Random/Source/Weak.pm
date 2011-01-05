@@ -22,3 +22,5 @@ This is an abstract base class. There isn't much to describe.
 Returns false
 
 =cut
+
+# ex: set sw=4 et:

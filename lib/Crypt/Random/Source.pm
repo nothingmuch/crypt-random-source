@@ -69,3 +69,5 @@ L<Crypt::Random::Source::Factory>, calling get
 L<Crypt::Random>, L<Crypt::Util>
 
 =cut
+
+# ex: set sw=4 et

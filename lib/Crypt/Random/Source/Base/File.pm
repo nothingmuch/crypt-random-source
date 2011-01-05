@@ -51,3 +51,5 @@ A required attribute, the path to the file to open.
 Uses L<IO::File> to open C<path> for reading.
 
 =cut
+
+# ex: set sw=4 et:

@@ -185,3 +185,5 @@ The C<type> argument can be C<weak>, C<strong> or C<any>.
 Instantiate a new weak or strong random source.
 
 =cut
+
+# ex: set sw=4 et:

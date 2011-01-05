@@ -22,3 +22,4 @@ use ok 'Crypt::Random::Source::Weak::rand';
     cmp_ok( $buf, "ne", $p->get(length($buf)), "not equal to more randomness" );
 }
 
+# ex: set sw=4 et:

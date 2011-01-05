@@ -17,3 +17,5 @@ sub default_path { "/dev/urandom" }
     use Crypt::Random::Source::Weak::devurandom;
 
 =cut
+
+# ex: set sw=4 et:

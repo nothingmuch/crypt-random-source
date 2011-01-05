@@ -49,3 +49,5 @@ An array reference or string that is the command to run.
 Opens a pipe for reading using C<command>.
 
 =cut
+
+# ex: set sw=4 et:

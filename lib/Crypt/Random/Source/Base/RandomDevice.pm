@@ -47,3 +47,5 @@ See L<Crypt::Random::Source::Strong::devrandom> and
 L<Crypt::Random::Source::Weak::devurandom> for actual implementations.
 
 =cut
+
+# ex: set sw=4 et:
