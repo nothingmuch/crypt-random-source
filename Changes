@@ -1,3 +1,5 @@
+		- Make Crypt::Random::Source work properly in taint mode.
+
 0.06
 		- Use Any::Moose to allow either Moose or Mouse.
 		- Switch to dzil.

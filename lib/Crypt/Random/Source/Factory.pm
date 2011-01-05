@@ -146,7 +146,11 @@ sub first_available {
 
 sub locate_sources {
     my ( $self, $category ) = @_;
-    [ findsubmod "Crypt::Random::Source::$category" ];
+    my @sources = findsubmod "Crypt::Random::Source::$category";
+    # Untaint class names (which are tainted in taint mode because
+    # they came from the disk).
+    ($_) = $_ =~ /^(.*)$/ foreach @sources;
+    return \@sources;
 }
 
 1;
