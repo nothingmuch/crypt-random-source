@@ -6,8 +6,8 @@ use Any::Moose;
 use bytes;
 
 extends qw(
-	Crypt::Random::Source::Weak
-	Crypt::Random::Source::Base
+    Crypt::Random::Source::Weak
+    Crypt::Random::Source::Base
 );
 
 sub rank { -100 } # slow fallback
@@ -15,24 +15,24 @@ sub rank { -100 } # slow fallback
 sub available { 1 }
 
 sub seed {
-	my ( $self, @args ) = @_;
-	srand( unpack("%L*", @args) );
+    my ( $self, @args ) = @_;
+    srand( unpack("%L*", @args) );
 }
 
 sub get {
-	my ( $self, $n ) = @_;
-	pack "C*", map { int rand 256 } 1 .. $n;
+    my ( $self, $n ) = @_;
+    pack "C*", map { int rand 256 } 1 .. $n;
 }
 
 1;
 
 =head1 SYNOPSIS
 
-	use Crypt::Random::Source::Weak::rand;
+    use Crypt::Random::Source::Weak::rand;
 
-	my $p = Crypt::Random::Source::Weak::rand->new;
+    my $p = Crypt::Random::Source::Weak::rand->new;
 
-	$p->get(1024);
+    $p->get(1024);
 
 =head1 DESCRIPTION
 

@@ -13,38 +13,38 @@ sub get { die "abstract" }
 
 # cannibalized from IO::Scalar
 sub read {
-	my $self = $_[0];
-	my $n    = $_[2];
-	my $off  = $_[3] || 0;
+    my $self = $_[0];
+    my $n    = $_[2];
+    my $off  = $_[3] || 0;
 
-	my $read = $self->get($n);
-	$n = length($read);
-	($off ? substr($_[1], $off) : $_[1]) = $read;
-	return $n;
+    my $read = $self->get($n);
+    $n = length($read);
+    ($off ? substr($_[1], $off) : $_[1]) = $read;
+    return $n;
 }
 
 sub get_data {
-	my ( $self, %params ) = @_;
+    my ( $self, %params ) = @_;
 
-	if ( my $n = $params{Length} ) {
-		return $self->get($n);
-	} else {
-		my $size = $params{Size};
+    if ( my $n = $params{Length} ) {
+        return $self->get($n);
+    } else {
+        my $size = $params{Size};
 
-		if (ref $size && ref $size eq "Math::Pari") {
-			$size = Math::Pari::pari2num($size);
-		}
+        if (ref $size && ref $size eq "Math::Pari") {
+            $size = Math::Pari::pari2num($size);
+        }
 
-		return $self->get( int($size / 8) + 1 );
-	}
+        return $self->get( int($size / 8) + 1 );
+    }
 }
 
 1;
 
 =head1 SYNOPSIS
 
-	use Moose;
-	extends qw(Crypt::Random::Source::Base);
+    use Moose;
+    extends qw(Crypt::Random::Source::Base);
 
 =head1 DESCRIPTION
 

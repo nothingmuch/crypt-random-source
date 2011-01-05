@@ -13,30 +13,30 @@ use IO::Select;
 use ok 'Crypt::Random::Source::Base::Handle';
 
 {
-	my ( $reader, $writer ) = map { IO::Handle->new } 1 .. 2;
+    my ( $reader, $writer ) = map { IO::Handle->new } 1 .. 2;
 
-	defined ( my $child = open my $fh, "-|" ) or die "open: $!";
+    defined ( my $child = open my $fh, "-|" ) or die "open: $!";
 
-	if ($child) {
-		my $p = Crypt::Random::Source::Base::Handle->new( handle => $fh );
+    if ($child) {
+        my $p = Crypt::Random::Source::Base::Handle->new( handle => $fh );
 
-		$p->blocking(0);
+        $p->blocking(0);
 
-		if ( IO::Select->new( $fh )->can_read(1) ) {
-			is( $p->get(5), "foo", "underread due to blocking" );
-			is( $p->get(5), '', "underread due to blocking" );
-		}
+        if ( IO::Select->new( $fh )->can_read(1) ) {
+            is( $p->get(5), "foo", "underread due to blocking" );
+            is( $p->get(5), '', "underread due to blocking" );
+        }
 
-		kill TERM => $child;
-	} else {
-		STDOUT->autoflush(1);
+        kill TERM => $child;
+    } else {
+        STDOUT->autoflush(1);
 
-		print "foo";
+        print "foo";
 
-		sleep 10;
+        sleep 10;
 
-		print "bar";
+        print "bar";
 
-		exit;
-	}
+        exit;
+    }
 }

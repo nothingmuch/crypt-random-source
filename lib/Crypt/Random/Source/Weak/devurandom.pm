@@ -4,8 +4,8 @@ package Crypt::Random::Source::Weak::devurandom;
 use Any::Moose;
 
 extends qw(
-	Crypt::Random::Source::Weak
-	Crypt::Random::Source::Base::RandomDevice
+    Crypt::Random::Source::Weak
+    Crypt::Random::Source::Base::RandomDevice
 );
 
 sub default_path { "/dev/urandom" }
@@ -14,6 +14,6 @@ sub default_path { "/dev/urandom" }
 
 =head1 SYNOPSIS
 
-	use Crypt::Random::Source::Weak::devurandom;
+    use Crypt::Random::Source::Weak::devurandom;
 
 =cut

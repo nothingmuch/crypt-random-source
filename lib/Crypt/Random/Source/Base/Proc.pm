@@ -12,28 +12,28 @@ use 5.008;
 has command => ( is => "rw", required => 1 );
 
 sub open_handle {
-	my $self = shift;
+    my $self = shift;
 
-	my $cmd = $self->command;
-	my @cmd = ref $cmd ? @$cmd : $cmd;
+    my $cmd = $self->command;
+    my @cmd = ref $cmd ? @$cmd : $cmd;
 
-	open my $fh, "-|", @cmd
-		or die "open(@cmd|): $!";
+    open my $fh, "-|", @cmd
+        or die "open(@cmd|): $!";
 
-	bless $fh, "IO::Handle";
+    bless $fh, "IO::Handle";
 
-	return $fh;
+    return $fh;
 }
 
 1;
 
 =head1 SYNOPSIS
 
-	use Moose;
+    use Moose;
 
-	extends qw(Crypt::Random::Source::Base::Proc);
+    extends qw(Crypt::Random::Source::Base::Proc);
 
-	has '+command' => ( default => ... );
+    has '+command' => ( default => ... );
 
 =head1 DESCRIPTION
 

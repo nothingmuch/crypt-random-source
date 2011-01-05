@@ -8,36 +8,36 @@ extends qw(Crypt::Random::Source::Base::File);
 sub rank { 100 } # good quality, pretty fast
 
 has '+path' => (
-	builder => "default_path",
+    builder => "default_path",
 );
 
 sub available {
-	-r shift->default_path;
+    -r shift->default_path;
 }
 
 sub seed {
-	my ( $self, @args ) = @_;
+    my ( $self, @args ) = @_;
 
-	my $fh = $self->open_handle("w+");
+    my $fh = $self->open_handle("w+");
 
-	print $fh @args;
+    print $fh @args;
 
-	close $fh;
+    close $fh;
 }
 
 sub default_path {
-	die "abstract";
+    die "abstract";
 }
 
 1;
 
 =head1 SYNOPSIS
 
-	use Moose;
+    use Moose;
 
-	extends qw(Crypt::Random::Source::Base::RandomDevice);
+    extends qw(Crypt::Random::Source::Base::RandomDevice);
 
-	sub default_path { "/dev/myrandom" }
+    sub default_path { "/dev/myrandom" }
 
 =head1 DESCRIPTION
 

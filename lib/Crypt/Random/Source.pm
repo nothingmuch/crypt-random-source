@@ -6,11 +6,11 @@ use 5.008;
 use warnings;
 
 use Sub::Exporter -setup => {
-	exports  => [qw(
-		get get_weak get_strong
-		factory
-	)],
-	groups => { default => [qw(get get_weak get_strong)] },
+    exports  => [qw(
+        get get_weak get_strong
+        factory
+    )],
+    groups => { default => [qw(get get_weak get_strong)] },
 };
 
 use Crypt::Random::Source::Factory;
@@ -36,10 +36,10 @@ END { undef $weak; undef $strong; undef $any; undef $factory }
 
 =head1 SYNOPSIS
 
-	use Crypt::Random::Source qw(get_strong);
+    use Crypt::Random::Source qw(get_strong);
 
-	# get 10 cryptographically strong random bytes from an available source
-	my $bytes = get_strong(10);
+    # get 10 cryptographically strong random bytes from an available source
+    my $bytes = get_strong(10);
 
 =head1 DESCRIPTION
 

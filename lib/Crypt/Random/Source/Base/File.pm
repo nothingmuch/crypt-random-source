@@ -10,33 +10,33 @@ extends qw(Crypt::Random::Source::Base::Handle);
 use IO::File;
 
 has path => (
-	is => "rw",
-	required => 1,
+    is => "rw",
+    required => 1,
 );
 
 sub open_handle {
-	my ( $self, $mode ) = @_;
+    my ( $self, $mode ) = @_;
 
-	my $file = $self->path;
+    my $file = $self->path;
 
-	my $fh = IO::File->new;
+    my $fh = IO::File->new;
 
-	$fh->open($file, $mode || "r")
-		or croak "open($file): $!";
+    $fh->open($file, $mode || "r")
+        or croak "open($file): $!";
 
-	return $fh;
+    return $fh;
 }
 
 1;
 
 =head1 SYNOPSIS
 
-	use Moose;
-	extends qw(Crypt::Random::Source::Base::File);
+    use Moose;
+    extends qw(Crypt::Random::Source::Base::File);
 
-	has '+path' => (
-		default => "/foo/bar",
-	);
+    has '+path' => (
+        default => "/foo/bar",
+    );
 
 =head1 DESCRIPTION
 

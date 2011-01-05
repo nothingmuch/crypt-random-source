@@ -11,21 +11,21 @@ use IO::Handle;
 extends qw(Crypt::Random::Source::Base);
 
 has allow_under_read => (
-	isa => "Bool",
-	is  => "rw",
-	default => 0,
+    isa => "Bool",
+    is  => "rw",
+    default => 0,
 );
 
 has reread_attempts => (
-	is => "rw",
-	default => 1,
+    is => "rw",
+    default => 1,
 );
 
 has handle => (
-	is => "rw",
-	predicate  => "has_handle",
-	clearer    => "clear_handle",
-	lazy_build => 1,
+    is => "rw",
+    predicate  => "has_handle",
+    clearer    => "clear_handle",
+    lazy_build => 1,
 );
 
 sub blocking { shift->handle->blocking(@_) }
@@ -33,85 +33,85 @@ sub read { shift->handle->read(@_) }
 sub opened { shift->handle->opened(@_) }
 
 sub DEMOLISH {
-	my $self = shift;
-	$self->close;
+    my $self = shift;
+    $self->close;
 }
 
 sub _build_handle {
-	my ( $self, @args ) = @_;
-	$self->open_handle;
+    my ( $self, @args ) = @_;
+    $self->open_handle;
 }
 
 sub open_handle {
-	die "open_handle is an abstract method";
+    die "open_handle is an abstract method";
 }
 
 sub get {
-	my ( $self, $n, @args ) = @_;
+    my ( $self, $n, @args ) = @_;
 
-	croak "How many bytes would you like to read?" unless $n;
+    croak "How many bytes would you like to read?" unless $n;
 
-	return $self->_read($self->handle, $n, @args);
+    return $self->_read($self->handle, $n, @args);
 }
 
 sub _read {
-	my ( $self, $handle, $n, @args) = @_;
+    my ( $self, $handle, $n, @args) = @_;
 
-	my $buf;
-	my $got = $self->read($buf, $n);
+    my $buf;
+    my $got = $self->read($buf, $n);
 
-	if ( defined($got) && $got == $n || $! == EWOULDBLOCK ) {
-		return $buf;
-	} else {
-		croak "read error: $!" unless defined $got;
-		return $self->_read_too_short($buf, $got, $n, @args);
-	}
+    if ( defined($got) && $got == $n || $! == EWOULDBLOCK ) {
+        return $buf;
+    } else {
+        croak "read error: $!" unless defined $got;
+        return $self->_read_too_short($buf, $got, $n, @args);
+    }
 }
 
 sub _read_too_short {
-	my ( $self, $buf, $got, $req, %args ) = @_;
+    my ( $self, $buf, $got, $req, %args ) = @_;
 
-	if ( $self->allow_under_read ) {
-		return $buf;
-	} else {
-		if ( ($self->reread_attempts || 0) >= ($args{reread_attempt} || 0) ) {
-			croak "Source failed to read enough bytes (requested $req, got $got)";
-		} else {
-			return $buf . $self->_read( $req - $got, reread_attempt => 1 + ( $args{reread_attempt} || 0 ) );
-		}
-	}
+    if ( $self->allow_under_read ) {
+        return $buf;
+    } else {
+        if ( ($self->reread_attempts || 0) >= ($args{reread_attempt} || 0) ) {
+            croak "Source failed to read enough bytes (requested $req, got $got)";
+        } else {
+            return $buf . $self->_read( $req - $got, reread_attempt => 1 + ( $args{reread_attempt} || 0 ) );
+        }
+    }
 }
 
 sub close {
-	my $self = shift;
+    my $self = shift;
 
-	if ( $self->has_handle ) {
-		$self->handle->close; # or die "close: $!"; # open "-|" returns exit status on close
-		$self->clear_handle;
-	}
+    if ( $self->has_handle ) {
+        $self->handle->close; # or die "close: $!"; # open "-|" returns exit status on close
+        $self->clear_handle;
+    }
 }
 
 1;
 
 =head1 SYNOPSIS
 
-	use Moose;
-	extends qw(Crypt::Random::Source::Base::Handle);
+    use Moose;
+    extends qw(Crypt::Random::Source::Base::Handle);
 
-	sub open_handle {
-		# invoked as needed
-	}
-
-
-	# this class can also be used directly
-	Crypt::Random::Source::Base::Handle->new( handle => $file_handle );
+    sub open_handle {
+        # invoked as needed
+    }
 
 
-	# it supports some standard methods:
+    # this class can also be used directly
+    Crypt::Random::Source::Base::Handle->new( handle => $file_handle );
 
-	$p->blocking(0);
 
-	$p->read( my $buf, $n ); # no error handling here
+    # it supports some standard methods:
+
+    $p->blocking(0);
+
+    $p->read( my $buf, $n ); # no error handling here
 
 =head1 DESCRIPTION
 

@@ -9,9 +9,9 @@ sub is_strong { 0 }
 
 =head1 SYNOPSIS
 
-	use Moose;
+    use Moose;
 
-	extends qw(Crypt::Random::Source::Weak);
+    extends qw(Crypt::Random::Source::Weak);
 
 =head1 DESCRIPTION
 

@@ -4,8 +4,8 @@ package Crypt::Random::Source::Strong::devrandom;
 use Any::Moose;
 
 extends qw(
-	Crypt::Random::Source::Strong
-	Crypt::Random::Source::Base::RandomDevice
+    Crypt::Random::Source::Strong
+    Crypt::Random::Source::Base::RandomDevice
 );
 
 
@@ -15,6 +15,6 @@ sub default_path { "/dev/random" }
 
 =head1 SYNOPSIS
 
-	use Crypt::Random::Source::Strong::devrandom;
+    use Crypt::Random::Source::Strong::devrandom;
 
 =cut
