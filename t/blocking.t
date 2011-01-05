@@ -12,8 +12,8 @@ use IO::Select;
 
 use ok 'Crypt::Random::Source::Base::Handle';
 
-{
-    my ( $reader, $writer ) = map { IO::Handle->new } 1 .. 2;
+SKIP: {
+    skip "Windows can't open a blocking child pipe", 2 if $^O =~ /Win32/i;
 
     defined ( my $child = open my $fh, "-|" ) or die "open: $!";
 
