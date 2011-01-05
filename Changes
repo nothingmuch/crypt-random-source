@@ -1,3 +1,4 @@
+0.07
 		- Switch to using Capture::Tiny for Proc.pm, for Windows
 		  support.
 		- Prevent a warning from Handle.pm during global destruction.
