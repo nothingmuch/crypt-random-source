@@ -2,6 +2,7 @@ package Crypt::Random::Source::Factory;
 # ABSTRACT: Load and instantiate sources of random data
 
 use Any::Moose;
+use Class::Load 'load_class';
 
 use Carp qw(croak);
 
@@ -128,7 +129,7 @@ sub _build_strong_sources {
 sub best_available {
     my ( $self, @sources ) = @_;
 
-    my @available = grep { local $@; eval { Any::Moose::load_class($_); $_->available }; } @sources;
+    my @available = grep { local $@; eval { Class::Load::load_class($_); $_->available }; } @sources;
 
     my @sorted = sort { $b->rank <=> $a->rank } @available;
 
@@ -140,7 +141,7 @@ sub first_available {
 
     foreach my $class ( @sources ) {
         local $@;
-        return $class if eval { Any::Moose::load_class($class); $class->available };
+        return $class if eval { Class::Load::load_class($class); $class->available };
     }
 }
 
