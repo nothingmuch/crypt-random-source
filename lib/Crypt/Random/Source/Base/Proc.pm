@@ -3,19 +3,20 @@ package Crypt::Random::Source::Base::Proc;
 
 our $VERSION = '0.11';
 
-use Any::Moose;
+use Moo;
 
 extends qw(Crypt::Random::Source::Base::Handle);
 
 use Capture::Tiny 0.08 qw(capture);
 use File::Spec;
 use IO::File 1.14;
-use namespace::autoclean;
+use Types::Standard qw(Str);
+use namespace::clean;
 
 use 5.008;
 
 has command => ( is => "rw", required => 1 );
-has search_path => ( is => 'rw', isa => 'Str', lazy_build => 1 );
+has search_path => ( is => 'rw', isa => Str, lazy => 1, builder => 1);
 
 # This is a scalar so that people can customize it (which they would
 # particularly need to do on Windows).

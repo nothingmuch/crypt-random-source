@@ -3,14 +3,14 @@ package Crypt::Random::Source::Strong::devrandom;
 
 our $VERSION = '0.11';
 
-use Any::Moose;
+use Moo;
 
 extends qw(
     Crypt::Random::Source::Strong
     Crypt::Random::Source::Base::RandomDevice
 );
 
-use namespace::autoclean;
+use namespace::clean;
 
 sub default_path { "/dev/random" }
 

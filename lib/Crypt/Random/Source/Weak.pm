@@ -3,8 +3,8 @@ package Crypt::Random::Source::Weak;
 
 our $VERSION = '0.11';
 
-use Any::Moose;
-use namespace::autoclean;
+use Moo;
+use namespace::clean;
 
 sub is_strong { 0 }
 

@@ -3,7 +3,7 @@ package Crypt::Random::Source::Weak::rand;
 
 our $VERSION = '0.11';
 
-use Any::Moose;
+use Moo;
 
 use bytes;
 
@@ -11,7 +11,7 @@ extends qw(
     Crypt::Random::Source::Weak
     Crypt::Random::Source::Base
 );
-use namespace::autoclean;
+use namespace::clean;
 
 sub rank { -100 } # slow fallback
 

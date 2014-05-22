@@ -3,18 +3,19 @@ package Crypt::Random::Source::Base::Handle;
 
 our $VERSION = '0.11';
 
-use Any::Moose;
+use Moo;
+use Types::Standard qw(Bool);
 
 use Errno;
 
 use Carp qw(croak);
 use IO::Handle;
-use namespace::autoclean;
+use namespace::clean;
 
 extends qw(Crypt::Random::Source::Base);
 
 has allow_under_read => (
-    isa => "Bool",
+    isa => Bool,
     is  => "rw",
     default => 0,
 );
@@ -26,9 +27,10 @@ has reread_attempts => (
 
 has handle => (
     is => "rw",
+    lazy => 1,
+    builder => 1,
     predicate  => "has_handle",
     clearer    => "clear_handle",
-    lazy_build => 1,
 );
 
 sub blocking { shift->handle->blocking(@_) }

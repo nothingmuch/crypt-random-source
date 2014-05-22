@@ -3,14 +3,14 @@ package Crypt::Random::Source::Base::File;
 
 our $VERSION = '0.11';
 
-use Any::Moose;
+use Moo;
 
 use Carp qw(croak);
 
 extends qw(Crypt::Random::Source::Base::Handle);
 
 use IO::File;
-use namespace::autoclean;
+use namespace::clean;
 
 has path => (
     is => "rw",
