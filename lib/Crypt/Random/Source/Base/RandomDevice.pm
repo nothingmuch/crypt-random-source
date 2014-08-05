@@ -11,6 +11,8 @@ use namespace::clean;
 sub rank { 100 } # good quality, pretty fast
 
 has '+path' => (
+    lazy => 1,
+    required => 0,
     builder => "default_path",
 );
 
