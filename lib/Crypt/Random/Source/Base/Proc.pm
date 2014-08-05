@@ -5,7 +5,7 @@ use Any::Moose;
 
 extends qw(Crypt::Random::Source::Base::Handle);
 
-use Capture::Tiny qw(capture);
+use Capture::Tiny 0.08 qw(capture);
 use File::Spec;
 use IO::File;
 
