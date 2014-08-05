@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          - fix use of deprecated Any::Moose::load_class (RT#93163, David Pottage)
 
 0.07      2011-01-05
           - Switch to using Capture::Tiny for Proc.pm, for Windows
