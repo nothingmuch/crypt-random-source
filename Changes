@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.08      2014-08-05 00:03:21Z
           - fix use of deprecated Any::Moose::load_class (RT#93163, David Pottage)
 
 0.07      2011-01-05
