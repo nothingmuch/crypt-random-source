@@ -40,6 +40,9 @@ sub get_data {
 }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

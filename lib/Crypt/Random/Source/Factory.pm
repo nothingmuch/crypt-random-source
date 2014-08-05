@@ -154,6 +154,9 @@ sub locate_sources {
 }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

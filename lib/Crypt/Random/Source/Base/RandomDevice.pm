@@ -30,6 +30,9 @@ sub default_path {
 }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

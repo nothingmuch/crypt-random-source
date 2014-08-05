@@ -11,6 +11,9 @@ extends qw(
 sub default_path { "/dev/urandom" }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

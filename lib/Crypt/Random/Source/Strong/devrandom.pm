@@ -12,6 +12,9 @@ extends qw(
 sub default_path { "/dev/random" }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

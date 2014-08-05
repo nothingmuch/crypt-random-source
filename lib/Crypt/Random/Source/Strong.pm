@@ -6,6 +6,9 @@ use Any::Moose;
 sub is_strong { 1 }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

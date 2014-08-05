@@ -33,6 +33,9 @@ sub get_strong ($;@) { _strong->get(@_) }
 END { undef $weak; undef $strong; undef $any; undef $factory }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 

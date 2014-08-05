@@ -28,6 +28,9 @@ sub open_handle {
 }
 
 1;
+__END__
+
+=pod
 
 =head1 SYNOPSIS
 
