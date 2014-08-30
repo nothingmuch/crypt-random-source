@@ -7,6 +7,7 @@ use Errno qw(EWOULDBLOCK);
 
 use Carp qw(croak);
 use IO::Handle;
+use namespace::autoclean;
 
 extends qw(Crypt::Random::Source::Base);
 

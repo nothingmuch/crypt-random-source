@@ -8,6 +8,7 @@ use Carp qw(croak);
 extends qw(Crypt::Random::Source::Base::Handle);
 
 use IO::File;
+use namespace::autoclean;
 
 has path => (
     is => "rw",

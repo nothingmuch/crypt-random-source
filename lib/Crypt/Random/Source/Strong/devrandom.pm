@@ -8,6 +8,7 @@ extends qw(
     Crypt::Random::Source::Base::RandomDevice
 );
 
+use namespace::autoclean;
 
 sub default_path { "/dev/random" }
 

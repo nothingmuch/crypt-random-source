@@ -2,6 +2,7 @@ package Crypt::Random::Source::Weak;
 # ABSTRACT: Abstract base class for weak random data sources
 
 use Any::Moose;
+use namespace::autoclean;
 
 sub is_strong { 0 }
 

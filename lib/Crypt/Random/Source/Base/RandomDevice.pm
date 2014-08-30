@@ -4,6 +4,7 @@ package Crypt::Random::Source::Base::RandomDevice;
 use Any::Moose;
 
 extends qw(Crypt::Random::Source::Base::File);
+use namespace::autoclean;
 
 sub rank { 100 } # good quality, pretty fast
 

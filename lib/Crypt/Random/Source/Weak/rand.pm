@@ -9,6 +9,7 @@ extends qw(
     Crypt::Random::Source::Weak
     Crypt::Random::Source::Base
 );
+use namespace::autoclean;
 
 sub rank { -100 } # slow fallback
 

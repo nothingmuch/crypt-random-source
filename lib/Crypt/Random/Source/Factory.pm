@@ -7,8 +7,7 @@ use Class::Load 'load_class';
 use Carp qw(croak);
 
 use Module::Find;
-
-use namespace::clean -except => [qw(meta)];
+use namespace::autoclean;
 
 sub get {
     my ( $self, %args ) = @_;
