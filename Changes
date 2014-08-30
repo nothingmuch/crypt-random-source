@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.09      2014-08-30 17:07:04Z
           - bump prereq on namespace::clean (RT#65244) and IO::File (RT#68873)
 
 0.08      2014-08-05 00:03:21Z
