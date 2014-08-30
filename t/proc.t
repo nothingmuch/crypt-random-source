@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More 0.88;
 use Test::Exception;
 
 use ok 'Crypt::Random::Source::Base::Proc';
@@ -14,4 +14,5 @@ use ok 'Crypt::Random::Source::Base::Proc';
     throws_ok { $p->get(50) } qr/enough bytes/, "not having enough data is fatal";
 }
 
+done_testing;
 # ex: set sw=4 et:

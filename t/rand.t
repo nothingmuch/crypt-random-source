@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More 0.88;
 
 use ok 'Crypt::Random::Source::Weak::rand';
 
@@ -20,4 +20,5 @@ use ok 'Crypt::Random::Source::Weak::rand';
     cmp_ok( $buf, "ne", $p->get(length($buf)), "not equal to more randomness" );
 }
 
+done_testing;
 # ex: set sw=4 et:

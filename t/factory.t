@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More 0.88;
 
 use ok 'Crypt::Random::Source::Factory';
 
@@ -28,4 +28,5 @@ use ok 'Crypt::Random::Source::Factory';
     isa_ok( $f->get, "Crypt::Random::Source::Base" );
 }
 
+done_testing;
 # ex: set sw=4 et:

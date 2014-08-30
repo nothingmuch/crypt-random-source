@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More 0.88;
 use Test::Exception;
 
 use ok 'Crypt::Random::Source::Base::Handle';
@@ -23,6 +23,8 @@ use ok 'Crypt::Random::Source::Base::Handle';
 
     is( $buf, '', "nothing read" );
 }
+
+done_testing;
 
 __DATA__
 foo

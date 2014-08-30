@@ -1,8 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
-
+use Test::More 0.88;
 use 5.008;
 
 use IO::Handle;
@@ -39,4 +38,5 @@ SKIP: {
     }
 }
 
+done_testing;
 # ex: set sw=4 et:

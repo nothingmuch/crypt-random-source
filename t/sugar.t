@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More 0.88;
 
 use ok 'Crypt::Random::Source';
 
@@ -14,4 +14,5 @@ isa_ok( $Crypt::Random::Source::weak, "Crypt::Random::Source::Weak" );
 
 ok( !$Crypt::Random::Source::strong, "no strong source yet" );
 
+done_testing;
 # ex: set sw=4 et:

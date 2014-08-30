@@ -1,15 +1,13 @@
 use strict;
 use warnings;
 
-use Test::More;
-
-use Errno qw(EWOULDBLOCK);
+use Test::More 0.88;
 
 BEGIN {
     plan skip_all => "no /dev/random and /dev/urandom" unless -e "/dev/random" and -e "/dev/urandom";
-    plan 'no_plan';
 }
 
+use Errno qw(EWOULDBLOCK);
 use ok 'Crypt::Random::Source::Strong::devrandom';
 use ok 'Crypt::Random::Source::Weak::devurandom';
 
@@ -65,4 +63,5 @@ use ok 'Crypt::Random::Source::Weak::devurandom';
     can_ok($p, "seed");
 }
 
+done_testing;
 # ex: set sw=4 et:
