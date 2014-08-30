@@ -1,7 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-          - bump prereq on namespace::clean (RT#65244)
+          - bump prereq on namespace::clean (RT#65244) and IO::File (RT#68873)
 
 0.08      2014-08-05 00:03:21Z
           - fix use of deprecated Any::Moose::load_class (RT#93163, David Pottage)

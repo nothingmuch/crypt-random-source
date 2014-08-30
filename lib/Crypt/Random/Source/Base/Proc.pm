@@ -7,7 +7,7 @@ extends qw(Crypt::Random::Source::Base::Handle);
 
 use Capture::Tiny 0.08 qw(capture);
 use File::Spec;
-use IO::File;
+use IO::File 1.14;
 use namespace::autoclean;
 
 use 5.008;
