@@ -7,7 +7,7 @@ BEGIN {
     plan skip_all => "no /dev/random and /dev/urandom" unless -e "/dev/random" and -e "/dev/urandom";
 }
 
-use Errno qw(EWOULDBLOCK);
+use Errno;
 use ok 'Crypt::Random::Source::Strong::devrandom';
 use ok 'Crypt::Random::Source::Weak::devurandom';
 
@@ -33,7 +33,7 @@ use ok 'Crypt::Random::Source::Weak::devurandom';
         # this test should fail around every few universes or so ;-)
         cmp_ok( $buf, 'ne', $p->get(length($buf)), "random data differs" );
     } else {
-        is( $!, EWOULDBLOCK, "would have blocked" );
+        is( $!{EWOULDBLOCK}, "would have blocked" );
     }
 
     can_ok($p, "seed");

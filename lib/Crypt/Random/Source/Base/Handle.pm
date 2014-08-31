@@ -3,7 +3,7 @@ package Crypt::Random::Source::Base::Handle;
 
 use Any::Moose;
 
-use Errno qw(EWOULDBLOCK);
+use Errno;
 
 use Carp qw(croak);
 use IO::Handle;
@@ -61,7 +61,7 @@ sub _read {
     my $buf;
     my $got = $self->read($buf, $n);
 
-    if ( defined($got) && $got == $n || $! == EWOULDBLOCK ) {
+    if ( defined($got) && $got == $n || $!{EWOULDBLOCK} ) {
         return $buf;
     } else {
         croak "read error: $!" unless defined $got;
