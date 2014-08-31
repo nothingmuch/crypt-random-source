@@ -8,7 +8,7 @@ Crypt::Random::Source - Get weak or strong random data from pluggable sources
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

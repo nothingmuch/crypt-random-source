@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.10      2014-08-31 18:01:31Z
           - fix test on older operating systems that define EAGAIN and
             EWOULDBLOCK as different values in errno.h
 
