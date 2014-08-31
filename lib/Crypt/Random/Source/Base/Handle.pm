@@ -61,7 +61,7 @@ sub _read {
     my $buf;
     my $got = $self->read($buf, $n);
 
-    if ( defined($got) && $got == $n || $!{EWOULDBLOCK} ) {
+    if ( defined($got) && $got == $n || $!{EWOULDBLOCK} || $!{EAGAIN} ) {
         return $buf;
     } else {
         croak "read error: $!" unless defined $got;
