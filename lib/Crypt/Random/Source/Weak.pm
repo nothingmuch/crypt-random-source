@@ -1,6 +1,8 @@
 package Crypt::Random::Source::Weak;
 # ABSTRACT: Abstract base class for weak random data sources
 
+our $VERSION = '0.11';
+
 use Any::Moose;
 use namespace::autoclean;
 

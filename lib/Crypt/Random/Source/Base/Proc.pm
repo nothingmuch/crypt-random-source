@@ -1,6 +1,8 @@
 package Crypt::Random::Source::Base::Proc;
 # ABSTRACT: Base class for helper processes (e.g. C<openssl>)
 
+our $VERSION = '0.11';
+
 use Any::Moose;
 
 extends qw(Crypt::Random::Source::Base::Handle);

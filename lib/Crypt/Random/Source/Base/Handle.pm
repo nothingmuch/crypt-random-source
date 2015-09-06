@@ -1,6 +1,8 @@
 package Crypt::Random::Source::Base::Handle;
 # ABSTRACT: L<IO::Handle> based random data sources
 
+our $VERSION = '0.11';
+
 use Any::Moose;
 
 use Errno;
