@@ -1,6 +1,7 @@
 Revision history for Crypt-Random-Source
 
 {{$NEXT}}
+          - converted from Any::Moose to Moo (RT#101526, PR#1, Graham Knop)
 
 0.10      2014-08-31 18:01:31Z
           - fix test on older operating systems that define EAGAIN and
