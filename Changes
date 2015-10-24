@@ -1,5 +1,7 @@
 Revision history for Crypt-Random-Source
 
+{{$NEXT}}
+
 0.11      2015-10-24 03:57:25Z
           - converted from Any::Moose to Moo (RT#101526, PR#1, Graham Knop)
 

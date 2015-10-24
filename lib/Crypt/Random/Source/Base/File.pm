@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Base::File;
 # ABSTRACT: File (or device) random data sources
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Moo;
 

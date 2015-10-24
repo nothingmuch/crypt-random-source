@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Weak::devurandom;
 # ABSTRACT: A weak random data source using F</dev/urandom>
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Moo;
 

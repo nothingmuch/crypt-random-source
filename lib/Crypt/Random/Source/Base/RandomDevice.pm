@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Base::RandomDevice;
 # ABSTRACT: Base class for random devices
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Moo;
 

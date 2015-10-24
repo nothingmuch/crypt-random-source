@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Base;
 # ABSTRACT: Abstract base class for L<Crypt::Random::Source> classes
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Moo;
 use namespace::clean;
