@@ -49,7 +49,7 @@ __END__
 
 =head1 SYNOPSIS
 
-    use Moose;
+    use Moo;
     extends qw(Crypt::Random::Source::Base);
 
 =head1 DESCRIPTION

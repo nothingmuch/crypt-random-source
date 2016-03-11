@@ -15,8 +15,7 @@ __END__
 
 =head1 SYNOPSIS
 
-    use Moose;
-
+    use Moo;
     extends qw(Crypt::Random::Source::Strong);
 
 =head1 DESCRIPTION
