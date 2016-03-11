@@ -1,5 +1,7 @@
 Revision history for Crypt-Random-Source
 
+{{$NEXT}}
+
 0.12      2016-03-11 03:41:35Z
           - bump Moo prereq to avoid issues with an attribute default
 

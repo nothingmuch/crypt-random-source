@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Weak::rand;
 # ABSTRACT: Use C<rand> to create random bytes
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use Moo;
 

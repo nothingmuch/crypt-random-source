@@ -1,7 +1,7 @@
 package Crypt::Random::Source;
 # ABSTRACT: Get weak or strong random data from pluggable sources
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use strict;
 use 5.008;

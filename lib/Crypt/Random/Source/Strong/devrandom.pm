@@ -1,7 +1,7 @@
 package Crypt::Random::Source::Strong::devrandom;
 # ABSTRACT: A strong random data source using F</dev/random>
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use Moo;
 
