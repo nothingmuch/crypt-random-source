@@ -114,7 +114,6 @@ sub _build_weak_sources {
         return [qw(
             Crypt::Random::Source::Weak::devurandom
             Crypt::Random::Source::Weak::openssl
-            Crypt::Random::Source::Weak::rand
         )];
     }
 }
