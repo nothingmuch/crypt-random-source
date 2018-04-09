@@ -69,6 +69,18 @@ L<Crypt::Random::Source::Factory>, calling get
 
 =back
 
+=head1 CAVEATS
+
+In versions prior to 0.13, C<rand> could be used as a result of calling
+C<get_weak>, or C<get>, if no random device was available. This implies that
+not explicitly asking for C<get_strong> on a non POSIX operating system (e.g.
+Win32 without the Win32 backend) could have resulted in non cryptographically
+random data.
+
+Relatedly, the characterization of C<urandom> as a weak source of randomness is
+also largely a misconception, see L<https://www.2uo.de/myths-about-urandom/>
+for example.
+
 =head1 SEE ALSO
 
 L<Crypt::Random>, L<Crypt::Util>
